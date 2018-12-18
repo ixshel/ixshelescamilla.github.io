@@ -1,0 +1,29 @@
+{% if site.talks %}
+	<div id="coursesBubble" class="rounded_panel txt_lightgrey">
+		<div class="top-rounded-panel grey-bg">
+			<h1>talks</h1>
+		</div>
+		<div class="content-rounded-panel">
+				<div id="courseraPanel">
+					{% for talk in site.talks %}
+					<div class="row">
+						<div class="col-sm-6">
+							<a target='_blank' href="{{talk.link}}">
+								{{talk.title}}
+							</a><br />
+							<i>{{talk.description}}</i>
+							<br>
+							<i>{{talk.place}}</i> -- <i>{{talk.date}}</i>
+							<br>at {{ talk.company }}
+						</div>
+						{% if talk.optionalimage %}
+						<div class="col-sm-5">
+							<img style="width:15vw;" src="{{talk.optionalimage}}">
+						</div>
+						{% endif %}
+					</div><br />
+					{% endfor %}
+				</div>
+			</div>
+	</div>
+{% endif %}

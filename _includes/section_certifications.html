@@ -1,0 +1,29 @@
+{% if site.certifications %}
+<div id="coursesBubble" class="rounded_panel txt_lightgrey">
+	<div class="top-rounded-panel grey-bg">
+		<h1>certifications</h1><span style="color: red"><sup>*click at the link to see certification</sup></span>
+	</div>
+	<div class="content-rounded-panel">
+		<div id="courseraPanel">
+			{% for cert in site.certifications %}
+			<div class="row">
+				<div class="col-sm-6">
+					<a target='_blank' href="{{cert.link}}">
+						{{cert.title}}
+					</a><br />
+					<i>{{cert.description}}</i>
+					<br>
+					<i>{{cert.place}}</i> -- <i>{{cert.date}}</i>
+					<br> by: {{ cert.company }}
+				</div>
+				{% if cert.optionalimage %}
+				<div class="col-sm-5">
+					<img style="width:15vw;" src="{{cert.optionalimage}}">
+				</div>
+				{% endif %}
+			</div><br />
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endif %}

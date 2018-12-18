@@ -1,0 +1,24 @@
+{% if site.courses %}
+<div id="coursesBubble" class="rounded_panel txt_lightgrey">
+	<div class="top-rounded-panel grey-bg">
+		<h1>courses</h1>
+	</div>
+	<div class="content-rounded-panel">
+		<div id="courseraPanel">
+			{% for course in site.courses %}
+			<div class="row">
+				<div class="col-sm-6">
+					<a>
+						{{course.title}}
+					</a><br />
+					<i>{{course.description}}</i>
+					<br>
+					<i>{{course.place}}</i> -- <i>{{course.date}}</i>
+					<br> by: {{ course.company }}
+				</div>
+			</div><br />
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endif %}
